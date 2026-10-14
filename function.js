@@ -7,6 +7,17 @@
   const mainNav = document.getElementById('main-nav');
   const navLinks = Array.from(document.querySelectorAll('.main-nav a'));
 
+  // Enlaces de regreso al inicio: fuerza el desplazamiento hasta arriba.
+  document.querySelectorAll('a[href="#inicio"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      if (window.location.hash !== '#inicio') {
+        history.replaceState(null, '', '#inicio');
+      }
+    });
+  });
+
   // Barra superior: indica cuánto de la página se ha recorrido.
   function updateReadingProgress() {
     if (!progressBar) return;
