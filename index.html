@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171714">
+  <meta name="description" content="RENACER: biografía colectiva de Mateo Rivas y el papel de la socialización en su historia de cambio personal.">
+  <title>RENACER — La historia de alguien que aprendió a cambiar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="function.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="reading-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <header class="site-header" id="inicio">
+    <a class="brand" href="#inicio" aria-label="RENACER, volver al inicio">
+      <span class="brand-mark">R.</span>
+      <span class="brand-name">RENACER<span> / BIOGRAFÍA COLECTIVA</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+      <a href="#historia">La historia</a>
+      <a href="#linea-de-vida">Línea de vida</a>
+      <a href="#socializacion">Socialización</a>
+      <a href="#reflexion">Reflexión</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- PORTADA -->
+    <section class="hero section-dark" aria-labelledby="hero-title">
+      <div class="hero-image image-frame" data-image="imagenes/portada.jpg" data-label="Portada: Mateo frente a un horizonte al amanecer">
+        <img src="imagenes/portada.jpg" alt="Mateo contempla un horizonte al amanecer" fetchpriority="high">
+        <div class="image-placeholder"><span>IMAGEN 01</span><strong>portada.jpg</strong><small>Coloca aquí una imagen panorámica cinematográfica.</small></div>
+      </div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> UNA BIOGRAFÍA SOBRE IDENTIDAD Y CAMBIO</p>
+        <h1 id="hero-title">RENA<span>CER</span></h1>
+        <p class="hero-subtitle">La historia de alguien<br>que aprendió a cambiar.</p>
+        <p class="hero-description">Una vida marcada por las dificultades, las decisiones equivocadas y la posibilidad de empezar de nuevo.</p>
+        <a class="button button-gold" href="#historia">Descubrir su historia <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-index"><span>01</span><i></i><span>08</span></div>
+      <div class="hero-bottom-note">SAN MIGUEL, EL SALVADOR <span>·</span> HISTORIA FICTICIA</div>
+    </section>
+
+    <!-- PERFIL -->
+    <section class="intro section-light section-pad" id="historia">
+      <div class="section-kicker reveal"><span>01</span> / CONOCE A MATEO</div>
+      <div class="intro-grid">
+        <div class="intro-copy reveal">
+          <p class="overline">EL PERSONAJE</p>
+          <h2>El pasado explica.<br><em>No decide el final.</em></h2>
+          <p class="lead">Mateo Rivas creció buscando aceptación en los lugares equivocados. Durante años creyó que sus errores definían quién era.</p>
+          <p>Con el tiempo, el apoyo de algunas personas, las oportunidades educativas y sus propias decisiones lo llevaron a descubrir que podía construir un futuro diferente.</p>
+          <div class="profile-facts">
+            <div><span>Nombre</span><strong>Mateo Rivas</strong></div>
+            <div><span>Lugar de origen</span><strong>San Miguel, El Salvador</strong></div>
+            <div><span>Año de nacimiento</span><strong>2008</strong></div>
+          </div>
+        </div>
+        <figure class="portrait-wrap reveal image-frame" data-image="imagenes/mateo-perfil.jpg" data-label="Retrato de Mateo Rivas">
+          <img src="imagenes/mateo-perfil.jpg" alt="Retrato cinematográfico del personaje ficticio Mateo Rivas" loading="lazy">
+          <div class="image-placeholder"><span>RETRATO</span><strong>mateo-perfil.jpg</strong><small>Retrato del personaje ficticio.</small></div>
+          <figcaption><span>FIG. 01</span> Mateo Rivas · Personaje ficticio</figcaption>
+        </figure>
+      </div>
+      <div class="intro-quote reveal"><span class="quote-mark">“</span><p>Una persona no está condenada a ser quien fue durante su peor etapa.</p><span class="quote-credit">— IDEA CENTRAL DE LA BIOGRAFÍA</span></div>
+    </section>
+
+    <!-- LINEA DE VIDA / CAPITULOS -->
+    <section class="timeline-section section-dark section-pad" id="linea-de-vida">
+      <div class="section-kicker reveal"><span>02</span> / LÍNEA DE VIDA</div>
+      <div class="section-heading reveal">
+        <p class="overline">CINCO MOMENTOS, UNA TRANSFORMACIÓN</p>
+        <h2>La vida no cambia<br><em>de un solo golpe.</em></h2>
+        <p class="section-intro">Cada etapa dejó una huella: algunas le dificultaron avanzar; otras le mostraron nuevas formas de vivir y relacionarse.</p>
+      </div>
+      <div class="timeline">
+        <article class="chapter reveal">
+          <div class="chapter-marker"><span>01</span><i></i></div>
+          <div class="chapter-meta"><span>2008–2013</span><span>0–5 AÑOS</span></div>
+          <div class="chapter-grid">
+            <div class="chapter-copy">
+              <p class="overline">CAPÍTULO I</p>
+              <h3>Un hogar lleno<br>de silencios.</h3>
+              <p>Mateo nació en San Miguel y vivía con su madre, Elena, y su padre, Ricardo, en una casa modesta. Su madre trabajaba muchas horas y su padre, atravesando dificultades personales y económicas, tenía problemas para expresar sus emociones.</p>
+              <p>No todo era tristeza: su madre le contaba historias antes de dormir y su abuela Rosa le enseñaba a cuidar las plantas del patio. Sin embargo, los conflictos familiares y la falta de comunicación le hicieron difícil expresar lo que sentía.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>El lenguaje, los hábitos y las primeras normas de convivencia; también observó formas poco saludables de resolver los desacuerdos.</p></div>
+            </div>
+            <figure class="chapter-image image-frame" data-image="imagenes/capitulo-infancia.jpg" data-label="La infancia de Mateo en su hogar">
+              <img src="imagenes/capitulo-infancia.jpg" alt="Interior de un hogar modesto que representa la infancia de Mateo" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 01</span><strong>capitulo-infancia.jpg</strong><small>Hogar y recuerdos de infancia.</small></div>
+              <figcaption>01 / LAS PRIMERAS INFLUENCIAS</figcaption>
+            </figure>
+          </div>
+          <p class="chapter-institution"><span>ENTORNO PRINCIPAL</span> Familia <b>·</b> Madre, padre y abuela <b>·</b> Valores, hábitos y afecto</p>
+        </article>
+
+        <article class="chapter reveal">
+          <div class="chapter-marker"><span>02</span><i></i></div>
+          <div class="chapter-meta"><span>2014–2020</span><span>6–12 AÑOS</span></div>
+          <div class="chapter-grid chapter-grid-reverse">
+            <figure class="chapter-image image-frame" data-image="imagenes/capitulo-escuela.jpg" data-label="Mateo durante su etapa escolar">
+              <img src="imagenes/capitulo-escuela.jpg" alt="Patio escolar que representa la etapa educativa de Mateo" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 02</span><strong>capitulo-escuela.jpg</strong><small>Escuela y primeras oportunidades.</small></div>
+              <figcaption>02 / ALGUIEN CONFÍA EN ÉL</figcaption>
+            </figure>
+            <div class="chapter-copy">
+              <p class="overline">CAPÍTULO II</p>
+              <h3>El muchacho que<br>siempre estaba<br>en problemas.</h3>
+              <p>Al comenzar la escuela, Mateo tenía dificultades para concentrarse y reaccionaba mal cuando se sentía criticado. Interrumpía las clases, discutía con compañeros y dejaba tareas sin terminar.</p>
+              <p>La maestra Claudia Morales descubrió que era curioso, creativo y hábil para reparar objetos. Lo invitó a colaborar en una maqueta para una feria escolar. Por primera vez en mucho tiempo, Mateo sintió que alguien confiaba en él.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>Que podía ganarse el reconocimiento colaborando, cumpliendo responsabilidades y utilizando sus habilidades.</p></div>
+            </div>
+          </div>
+          <p class="chapter-institution"><span>ENTORNO PRINCIPAL</span> Escuela <b>·</b> Docentes y compañeros <b>·</b> Colaboración, convivencia y responsabilidad</p>
+        </article>
+
+        <article class="chapter reveal">
+          <div class="chapter-marker"><span>03</span><i></i></div>
+          <div class="chapter-meta"><span>2021–2023</span><span>13–15 AÑOS</span></div>
+          <div class="chapter-grid">
+            <div class="chapter-copy">
+              <p class="overline">CAPÍTULO III</p>
+              <h3>El camino<br>equivocado.</h3>
+              <p>Durante la adolescencia, Mateo se acercó a un grupo de jóvenes que faltaban a clases y se burlaban de quienes intentaban estudiar. Con ellos se sentía aceptado, algo que había echado de menos durante años.</p>
+              <p>Sus calificaciones bajaron, discutía con su madre e ignoraba los consejos de sus maestros. Cuando perdió una oportunidad de participar en un proyecto escolar por sus ausencias, empezó a reconocer que sus decisiones estaban cerrándole puertas.</p>
+              <p>Su abuela Rosa le recordó que sus errores formaban parte de su historia, pero no tenían por qué decidir todo su futuro. Mateo aún no sabía cómo cambiar, pero comenzó a considerar la posibilidad.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>Que el deseo de pertenecer puede llevar a decisiones perjudiciales y que las acciones tienen consecuencias.</p></div>
+            </div>
+            <figure class="chapter-image image-frame" data-image="imagenes/capitulo-adolescencia.jpg" data-label="La etapa de conflicto de Mateo">
+              <img src="imagenes/capitulo-adolescencia.jpg" alt="Calle al atardecer que representa la etapa de conflicto de Mateo" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 03</span><strong>capitulo-adolescencia.jpg</strong><small>Adolescencia y búsqueda de pertenencia.</small></div>
+              <figcaption>03 / LA INFLUENCIA DEL GRUPO</figcaption>
+            </figure>
+          </div>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Familia, escuela y grupo de amigos <b>·</b> Pertenencia, presión social y consecuencias</p>
+        </article>
+
+        <article class="chapter reveal">
+          <div class="chapter-marker"><span>04</span><i></i></div>
+          <div class="chapter-meta"><span>2024–2025</span><span>16–17 AÑOS</span></div>
+          <div class="chapter-grid chapter-grid-reverse">
+            <figure class="chapter-image image-frame" data-image="imagenes/capitulo-cambio.jpg" data-label="Mateo aprende un oficio con un mentor">
+              <img src="imagenes/capitulo-cambio.jpg" alt="Taller comunitario donde Mateo aprende habilidades técnicas" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 04</span><strong>capitulo-cambio.jpg</strong><small>Un nuevo entorno de aprendizaje.</small></div>
+              <figcaption>04 / LA PRIMERA DECISIÓN DIFERENTE</figcaption>
+            </figure>
+            <div class="chapter-copy">
+              <p class="overline">CAPÍTULO IV</p>
+              <h3>La primera decisión<br>diferente.</h3>
+              <p>Mateo decidió retomar sus estudios con mayor seriedad. No recuperó todas las materias de inmediato ni dejó de discutir de un día para otro; tuvo que reconstruir la confianza de su madre y aprender a cumplir sus compromisos.</p>
+              <p>Un vecino que reparaba equipos eléctricos le permitió ayudar en un pequeño taller comunitario. Allí descubrió que disfrutaba resolver problemas técnicos y trabajar con sus manos.</p>
+              <p>Se distanció de las amistades que lo presionaban para faltar a clases y se acercó a compañeros con intereses similares. Poco a poco, empezó a imaginar un futuro concreto.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>La responsabilidad también significa respetar su propio tiempo y el de los demás; el cambio requiere práctica y constancia.</p></div>
+            </div>
+          </div>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Familia, escuela y comunidad <b>·</b> Perseverancia, autonomía y confianza</p>
+        </article>
+
+        <article class="chapter reveal chapter-last">
+          <div class="chapter-marker"><span>05</span><i></i></div>
+          <div class="chapter-meta"><span>2026 EN ADELANTE</span><span>18 AÑOS EN ADELANTE</span></div>
+          <div class="chapter-grid">
+            <div class="chapter-copy">
+              <p class="overline">CAPÍTULO V</p>
+              <h3>Aprender a<br>empezar de nuevo.</h3>
+              <p>Después de completar la educación media, Mateo decidió continuar formándose en un área relacionada con la tecnología. Tuvo que administrar mejor su tiempo, organizar sus gastos y responder a nuevas exigencias académicas.</p>
+              <p>En sus nuevos entornos conoció personas con experiencias y perspectivas diferentes. Todavía sentía frustración cuando algo no salía como esperaba, pero aprendió a pedir ayuda, escuchar críticas y reconocer sus errores.</p>
+              <p>Más adelante comenzó a colaborar como voluntario en actividades comunitarias de apoyo escolar. Al conocer a un adolescente que pensaba abandonar sus estudios, decidió escucharlo sin juzgarlo y compartir lo que había aprendido.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>La autonomía, la ética, la adaptación a nuevos roles y el valor de contribuir al bienestar de otras personas.</p></div>
+            </div>
+            <figure class="chapter-image image-frame" data-image="imagenes/capitulo-futuro.jpg" data-label="Mateo mira hacia un futuro distinto">
+              <img src="imagenes/capitulo-futuro.jpg" alt="Joven estudiante mirando un horizonte iluminado" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 05</span><strong>capitulo-futuro.jpg</strong><small>Formación, autonomía y futuro.</small></div>
+              <figcaption>05 / UNA NUEVA FORMA DE MIRAR EL FUTURO</figcaption>
+            </figure>
+          </div>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Formación profesional, trabajo y comunidad <b>·</b> Autonomía, ética y compromiso social</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INSTITUCIONES -->
+    <section class="institutions section-light section-pad" id="instituciones">
+      <div class="section-kicker reveal"><span>03</span> / EL ENTORNO SOCIAL</div>
+      <div class="section-heading reveal">
+        <p class="overline">LAS PERSONAS Y LOS GRUPOS QUE NOS FORMAN</p>
+        <h2>Nadie crece<br><em>completamente solo.</em></h2>
+        <p class="section-intro">En la historia de Mateo, cada entorno cumplió un papel distinto. Algunas influencias le pusieron obstáculos; otras le ayudaron a encontrar nuevas posibilidades.</p>
+      </div>
+      <div class="institution-grid">
+        <article class="institution-card reveal">
+          <figure class="institution-photo image-frame" data-image="imagenes/institucion-familia.jpg" data-label="La familia de Mateo">
+            <img src="imagenes/institucion-familia.jpg" alt="Familia reunida en casa" loading="lazy">
+            <div class="image-placeholder"><span>INSTITUCIÓN 01</span><strong>institucion-familia.jpg</strong><small>Familia y hogar.</small></div>
+          </figure>
+          <div class="institution-card-copy"><span class="card-number">01 / PRIMER ENTORNO</span><h3>La familia</h3><p>Transmitió las primeras normas, costumbres y formas de relacionarse. El afecto de su madre y su abuela fue importante para que Mateo encontrara apoyo y motivación.</p><div class="tag-row"><span>Valores</span><span>Hábitos</span><span>Afecto</span></div></div>
+        </article>
+        <article class="institution-card reveal">
+          <figure class="institution-photo image-frame" data-image="imagenes/institucion-escuela.jpg" data-label="La escuela y los docentes">
+            <img src="imagenes/institucion-escuela.jpg" alt="Docente acompaña a estudiantes en un proyecto escolar" loading="lazy">
+            <div class="image-placeholder"><span>INSTITUCIÓN 02</span><strong>institucion-escuela.jpg</strong><small>Educación y convivencia.</small></div>
+          </figure>
+          <div class="institution-card-copy"><span class="card-number">02 / APRENDIZAJE SOCIAL</span><h3>La escuela</h3><p>Le enseñó a convivir con personas distintas, cumplir reglas y colaborar. La confianza de una docente le permitió descubrir capacidades que no reconocía en sí mismo.</p><div class="tag-row"><span>Convivencia</span><span>Disciplina</span><span>Cooperación</span></div></div>
+        </article>
+        <article class="institution-card reveal">
+          <figure class="institution-photo image-frame" data-image="imagenes/institucion-amigos.jpg" data-label="El grupo de amigos">
+            <img src="imagenes/institucion-amigos.jpg" alt="Grupo de adolescentes conversando en un espacio público" loading="lazy">
+            <div class="image-placeholder"><span>INSTITUCIÓN 03</span><strong>institucion-amigos.jpg</strong><small>Amistad y pertenencia.</small></div>
+          </figure>
+          <div class="institution-card-copy"><span class="card-number">03 / IDENTIDAD Y PERTENENCIA</span><h3>Los grupos de amigos</h3><p>Influyeron en sus gustos y decisiones. La historia muestra que la necesidad de pertenecer puede llevar a conductas negativas, pero también existen amistades que estimulan el crecimiento.</p><div class="tag-row"><span>Identidad</span><span>Pertenencia</span><span>Influencia</span></div></div>
+        </article>
+        <article class="institution-card reveal">
+          <figure class="institution-photo image-frame" data-image="imagenes/institucion-comunidad.jpg" data-label="El taller y la comunidad">
+            <img src="imagenes/institucion-comunidad.jpg" alt="Personas colaborando en un taller comunitario" loading="lazy">
+            <div class="image-placeholder"><span>INSTITUCIÓN 04</span><strong>institucion-comunidad.jpg</strong><small>Trabajo y participación social.</small></div>
+          </figure>
+          <div class="institution-card-copy"><span class="card-number">04 / NUEVOS ROLES</span><h3>La comunidad y el trabajo</h3><p>Le ofrecieron oportunidades para practicar habilidades, asumir compromisos y contribuir a los demás. Su participación comunitaria también le ayudó a dar un nuevo sentido a su experiencia.</p><div class="tag-row"><span>Responsabilidad</span><span>Autonomía</span><span>Servicio</span></div></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOCIALIZACION -->
+    <section class="socialization section-sand section-pad" id="socializacion">
+      <div class="section-kicker reveal"><span>04</span> / CONCEPTOS DE LA ASIGNATURA</div>
+      <div class="section-heading reveal">
+        <p class="overline">COMPRENDER EL PROCESO</p>
+        <h2>Tres etapas.<br><em>Un aprendizaje continuo.</em></h2>
+        <p class="section-intro">La socialización es el proceso por el cual aprendemos normas, valores, costumbres y comportamientos que nos permiten participar en la sociedad.</p>
+      </div>
+      <div class="socialization-list">
+        <article class="social-stage reveal">
+          <div class="stage-index">I</div>
+          <div class="stage-main"><p class="overline">INFANCIA</p><h3>Socialización primaria</h3><p>Se desarrolla principalmente durante los primeros años de vida, cuando aprendemos las primeras normas, hábitos y formas de convivencia.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Su familia le enseñó el lenguaje, las costumbres del hogar, el respeto y las primeras maneras de expresar sus emociones.</p><span class="stage-result">Familia → primeros valores y hábitos</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">II</div>
+          <div class="stage-main"><p class="overline">ESCUELA Y OTROS GRUPOS</p><h3>Socialización secundaria</h3><p>Se amplía cuando la persona participa en espacios fuera del hogar y aprende nuevas reglas, roles y maneras de relacionarse.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>La escuela, los docentes y sus amistades influyeron en su convivencia, su sentido de pertenencia, su responsabilidad y sus decisiones.</p><span class="stage-result">Escuela y grupos → roles y convivencia</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">III</div>
+          <div class="stage-main"><p class="overline">NUEVOS ENTORNOS Y ROLES</p><h3>Socialización terciaria</h3><p>Para este trabajo, se presenta como la adaptación a nuevos entornos y responsabilidades durante la transición a la vida adulta, de acuerdo con el enfoque que se utilice en clase.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>La formación profesional, el trabajo y la participación comunitaria le ayudaron a desarrollar autonomía, ética y compromiso social.</p><span class="stage-result">Nuevos entornos → adaptación y autonomía</span></div>
+        </article>
+      </div>
+      <p class="academic-note"><strong>Nota académica:</strong> el uso del término “socialización terciaria” puede variar según el marco teórico de cada curso. Esta sección debe ajustarse a la definición utilizada por el docente si difiere de la aquí presentada.</p>
+    </section>
+
+    <!-- REFLEXION / CIERRE -->
+    <section class="reflection section-dark section-pad" id="reflexion">
+      <div class="section-kicker reveal"><span>05</span> / REFLEXIÓN FINAL</div>
+      <div class="reflection-grid">
+        <div class="reflection-copy reveal">
+          <p class="overline">EPÍLOGO</p>
+          <h2>No somos solamente<br><em>de dónde venimos.</em></h2>
+          <p>Mateo comprendió que la familia, la escuela, los amigos y la comunidad habían influido profundamente en su desarrollo. Algunas experiencias le dieron herramientas para crecer; otras lo llevaron a adoptar comportamientos que tuvo que cuestionar y cambiar.</p>
+          <p>No podía modificar su infancia, pero sí aprender de ella. Tampoco podía borrar sus errores, pero podía asumirlos y construir nuevas formas de relacionarse con los demás.</p>
+          <p>Su historia no terminó cuando decidió cambiar. En realidad, fue entonces cuando comenzó a escribirla de manera consciente.</p>
+        </div>
+        <figure class="reflection-image image-frame reveal" data-image="imagenes/cierre.jpg" data-label="Imagen final que simboliza esperanza y futuro">
+          <img src="imagenes/cierre.jpg" alt="Camino iluminado al amanecer, símbolo de nuevas oportunidades" loading="lazy">
+          <div class="image-placeholder"><span>EPÍLOGO</span><strong>cierre.jpg</strong><small>Camino, horizonte o luz de amanecer.</small></div>
+          <figcaption>TODO CAMBIO COMIENZA CON UN PASO</figcaption>
+        </figure>
+      </div>
+      <blockquote class="final-quote reveal"><span>“</span><p>El pasado explica parte de nuestra historia, pero nuestras decisiones también ayudan a construir lo que llegamos a ser.</p></blockquote>
+    </section>
+
+    <!-- PORTADA ACADEMICA / CREDITOS -->
+    <footer class="site-footer section-light" id="creditos">
+      <div class="footer-top">
+        <div class="footer-title"><span class="brand-mark">R.</span><div><h2>RENACER</h2><p>Biografía colectiva · Laboratorio 1</p></div></div>
+        <a class="back-top" href="#inicio">Volver al inicio ↑</a>
+      </div>
+      <div class="credits-grid">
+        <div class="credit-block"><span class="credit-label">INTEGRANTES</span><p>Ricardo Alexander Chávez Martínez</p><p>Emerson Giancarlo Castro Pleitez</p><p>Emily María Quito Fuentes</p></div>
+        <div class="credit-block"><span class="credit-label">INFORMACIÓN ACADÉMICA</span><p>Ingeniería en Sistemas y Redes Informáticas</p><p>Ciclo II · 2026</p><p>Universidad Gerardo Barrios</p></div>
+        <div class="credit-block"><span class="credit-label">DOCENTE</span><p>Lic. Kevin Francisco Muñoz Paniagua</p></div>
+      </div>
+      <div class="footer-bottom"><span>HISTORIA FICTICIA · PROYECTO ACADÉMICO</span><span>IDENTIDAD · SOCIALIZACIÓN · CAMBIO</span></div>
+    </footer>
+  </main>
+</body>
+</html>
