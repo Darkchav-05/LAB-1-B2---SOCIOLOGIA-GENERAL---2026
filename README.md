@@ -23,23 +23,18 @@ Proyecto académico desarrollado para representar una biografía colectiva a tra
 
 # 🏗️ Arquitectura
 
-La aplicación está construida utilizando una arquitectura simple basada en tres archivos principales:
+La página reúne la estructura, los estilos y las interacciones en un solo archivo HTML. Las imágenes se conservan como recursos locales:
 
 ```text
 index.html
-      │
-      ▼
-style.css
-      │
-      ▼
-function.js
+imagenes/
 ```
 
-Cada archivo tiene una responsabilidad específica:
+El archivo `index.html` incluye:
 
-- HTML → estructura del contenido.
-- CSS → diseño visual y responsive.
-- JavaScript → interactividad y animaciones.
+- HTML semántico para el contenido y la navegación.
+- CSS integrado para el diseño editorial adaptable, las animaciones y la accesibilidad.
+- JavaScript integrado para el menú móvil, el progreso de lectura, las apariciones al desplazarse y el estado de navegación.
 
 ---
 
@@ -47,9 +42,7 @@ Cada archivo tiene una responsabilidad específica:
 
 | Archivo | Función |
 |----------|----------|
-| `index.html` | Contiene toda la estructura semántica del sitio. |
-| `style.css` | Define colores, tipografías, layouts, animaciones y adaptabilidad. |
-| `function.js` | Controla el menú móvil, barra de progreso, animaciones y navegación dinámica. |
+| `index.html` | Página completa: estructura, estilos e interacciones integradas. |
 | `imagenes/` | Carpeta que almacena todas las imágenes utilizadas por el proyecto. |
 
 ---
@@ -113,6 +106,8 @@ Dividida en:
 - Capítulo IV
 - Capítulo V
 
+Los capítulos se presentan como tarjetas en un mural digital. Cada tarjeta abre un modal desplazable con el relato completo y controles para recorrer los capítulos.
+
 ---
 
 ### Instituciones Sociales
@@ -164,7 +159,7 @@ Información académica y créditos.
 
 ---
 
-# 🎨 style.css
+## 🎨 Estilos integrados en `index.html`
 
 Controla la identidad visual completa del proyecto.
 
@@ -290,7 +285,7 @@ Adaptando:
 
 ---
 
-# ⚙️ function.js
+## ⚙️ Interacciones integradas en `index.html`
 
 Gestiona todas las funciones interactivas.
 
@@ -352,6 +347,8 @@ Agregar is-visible
         ↓
 Animación CSS
 ```
+
+Las tarjetas del mural también pueden abrir modales animados con el detalle de cada etapa, institución social o concepto. Se cierran con el botón, al pulsar `Escape` o al hacer clic fuera; los capítulos incluyen navegación anterior y siguiente.
 
 ---
 
