@@ -452,3 +452,14 @@ Universidad Gerardo Barrios
 ---
 
 > "El pasado explica parte de nuestra historia, pero nuestras decisiones ayudan a construir lo que llegamos a ser."
+
+---
+
+# 🔄 Actualización: vida completa y conceptos de la asignatura
+
+- La línea de vida pasó de 5 a **7 etapas**: se eliminó la proyección a futuro y se describe la vida ya vivida (trabajo, matrimonio y familia, vejez como abuelo).
+- Cada etapa indica el **tipo de socialización** y el **concepto de la clase** que la explica.
+- Nueva sección **Control social** (medios informales y formales, desviación, sanciones, internalización).
+- Nueva sección **El ser humano y la sociedad** (Aristóteles, Mead, Bourdieu, Weber/Berger y Luckmann, desarrollo humano e IDH, sociología de la tecnología e IA).
+- Las tarjetas de **Entorno social** y **Socialización** abren ahora un momento adicional de la vida de Mateo; las secciones de control social y teorías ya no tienen botón (todo su contenido está visible).
+- Animaciones suaves: zoom lento en la portada, aparición escalonada, elevación al pasar el cursor y pulso en los marcadores (se desactivan con "reducir movimiento").

@@ -587,6 +587,76 @@ body { font-size: 19px; line-height: 1.8; }
 .team-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .team-list li { padding: 15px 17px; border-left: 3px solid var(--gold); background: #eee9dc; color: #343a34; font-size: 18px; line-height: 1.55; }
 
+
+/* Menú con siete enlaces: evita que se encimen en pantallas medianas */
+.main-nav a { white-space: nowrap; }
+@media (min-width: 681px) and (max-width: 1500px) {
+  .brand-name span { display: none; }
+  .main-nav { gap: 2px; }
+  .main-nav a { padding: 8px 8px; font-size: 12px; }
+  .main-nav .team-open-button { margin-left: 4px; padding-inline: 10px; font-size: 12px; }
+}
+@media (min-width: 681px) and (max-width: 900px) {
+  .brand-name { display: none; }
+  .brand { flex-shrink: 0; }
+  .site-header { padding-inline: 14px; gap: 10px; }
+  .main-nav a { padding: 8px 4px; font-size: 10.5px; letter-spacing: 0; }
+  .main-nav .team-open-button { padding-inline: 8px; font-size: 11px; }
+}
+
+/* Portada: integrantes del equipo */
+.hero-credits { margin-top: 30px; padding-top: 18px; max-width: 460px; border-top: 1px solid rgba(238, 219, 177, .35); }
+.hero-credits-label { display: block; margin-bottom: 8px; color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+.hero-credits p { margin: 0 0 10px; color: #e6e2d6; font-size: 15px; line-height: 1.65; }
+.hero-credits small { display: block; color: #aaa69a; font-size: 12px; line-height: 1.6; }
+@media (max-width: 680px) { .hero-credits { margin-top: 24px; } .hero-credits p { font-size: 14px; } }
+
+.hero-credits-side { display: none; }
+@media (min-width: 1000px) {
+  .hero-credits { display: none; }
+  .hero-credits-side { display: block; position: absolute; z-index: 4; top: 112px; right: clamp(26px, 5vw, 72px); width: min(340px, 30vw); padding: 18px 22px; border: 1px solid rgba(238, 219, 177, .32); border-radius: 4px; background: rgba(12, 20, 17, .6); backdrop-filter: blur(6px); text-align: right; }
+  .hero-credits-side .hero-credits-label { display: block; margin-bottom: 8px; color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+  .hero-credits-side p { margin: 0 0 10px; color: #f0ece0; font-size: 15px; line-height: 1.65; }
+  .hero-credits-side small { display: block; color: #b3afa3; font-size: 12px; line-height: 1.6; }
+}
+
+/* Cómo se dio la socialización */
+.chapter-how { margin: 14px 0 0; padding: 14px 0 0; list-style: none; border-top: 1px solid rgba(23, 35, 31, .14); }
+.chapter-how li { margin: 0 0 9px; color: #555a53; font-size: 14px; line-height: 1.6; }
+.chapter-how .how-title { color: #876a3e; font-size: 12px; font-weight: 700; letter-spacing: .15em; }
+.chapter-how b { color: #3b4a43; font-weight: 700; }
+
+.card-story { display: none; }
+
+/* Animaciones suaves */
+.hero-image > img { animation: hero-zoom 26s ease-in-out infinite alternate; transform-origin: 62% 45%; will-change: transform; }
+@keyframes hero-zoom { from { transform: scale(1); } to { transform: scale(1.09); } }
+.hero-image { overflow: hidden; }
+
+.institution-card, .social-stage { transition: transform .35s cubic-bezier(.2,.65,.3,1), box-shadow .35s ease, border-color .35s ease, opacity .75s ease; }
+.institution-card:hover, .social-stage:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(40, 36, 26, .16); border-color: rgba(176, 140, 81, .55); }
+.institution-photo img, .chapter-image img { transition: transform .9s cubic-bezier(.2,.65,.3,1); }
+.institution-card:hover .institution-photo img, .chapter:hover .chapter-image img { transform: scale(1.06); }
+.stage-index { display: inline-block; transition: transform .45s cubic-bezier(.2,.65,.3,1), color .3s ease; }
+.social-stage:hover .stage-index { transform: translateX(8px) scale(1.12); color: #b08c51; }
+
+.chapter-marker span { animation: marker-pulse 3.2s ease-out infinite; }
+@keyframes marker-pulse { 0% { box-shadow: 0 4px 14px rgba(0,0,0,.26), 0 0 0 0 rgba(196, 154, 90, .55); } 70% { box-shadow: 0 4px 14px rgba(0,0,0,.26), 0 0 0 16px rgba(196, 154, 90, 0); } 100% { box-shadow: 0 4px 14px rgba(0,0,0,.26), 0 0 0 0 rgba(196, 154, 90, 0); } }
+
+.section-heading h2 em { background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 2px; transition: background-size 1.4s cubic-bezier(.2,.65,.3,1) .4s; padding-bottom: 4px; }
+.section-heading.is-visible h2 em { background-size: 100% 2px; }
+
+.learning-note, .stage-result { transition: transform .3s ease; }
+.tag-row span { transition: transform .25s ease, background .25s ease; }
+.institution-card:hover .tag-row span { transform: translateY(-2px); }
+
+.hero-credits-side { animation: hero-enter 1s .5s both; }
+.reading-progress span { transition: width .12s linear; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image > img, .chapter-marker span, .hero-credits-side { animation: none !important; }
+  .institution-card:hover, .social-stage:hover { transform: none; }
+}
 </style>
 </head>
 <body>
@@ -606,6 +676,8 @@ body { font-size: 19px; line-height: 1.8; }
       <a href="#linea-de-vida">Línea de vida</a>
       <a href="#instituciones">Entorno social</a>
       <a href="#socializacion">Socialización</a>
+      <a href="#control-social">Control social</a>
+      <a href="#teorias">Teorías</a>
       <a href="#reflexion">Reflexión</a>
       <button class="team-open-button" id="team-open-button" type="button" aria-haspopup="dialog" aria-controls="team-dialog">Integrantes del lab</button>
     </nav>
@@ -625,7 +697,17 @@ body { font-size: 19px; line-height: 1.8; }
         <p class="hero-subtitle">La historia de alguien<br>que aprendió a cambiar.</p>
         <p class="hero-description">Una vida marcada por las dificultades, las decisiones equivocadas y la posibilidad de empezar de nuevo.</p>
         <a class="button button-gold" href="#linea-de-vida">Explorar el mural <span aria-hidden="true">↘</span></a>
+        <div class="hero-credits">
+          <span class="hero-credits-label">INTEGRANTES</span>
+          <p>Ricardo Alexander Chávez Martínez<br>Emerson Giancarlo Castro Pleitez<br>Emily María Quito Fuentes</p>
+          <small>Sociología General · Ingeniería en Sistemas y Redes Informáticas · Universidad Gerardo Barrios · Ciclo II 2026<br>Docente: Lic. Kevin Francisco Muñoz Paniagua</small>
+        </div>
       </div>
+      <div class="hero-credits-side" aria-label="Integrantes del equipo">
+          <span class="hero-credits-label">INTEGRANTES</span>
+          <p>Ricardo Alexander Chávez Martínez<br>Emerson Giancarlo Castro Pleitez<br>Emily María Quito Fuentes</p>
+          <small>Sociología General · Ingeniería en Sistemas y Redes Informáticas · Universidad Gerardo Barrios · Ciclo II 2026<br>Docente: Lic. Kevin Francisco Muñoz Paniagua</small>
+        </div>
       <div class="hero-index"><span>01</span><i></i><span>08</span></div>
       <div class="hero-bottom-note">SAN MIGUEL, EL SALVADOR <span>·</span> HISTORIA FICTICIA</div>
     </section>
@@ -658,9 +740,9 @@ body { font-size: 19px; line-height: 1.8; }
     <section class="timeline-section section-dark section-pad" id="linea-de-vida">
       <div class="section-kicker reveal"><span>02</span> / LÍNEA DE VIDA</div>
       <div class="section-heading reveal">
-        <p class="overline">CINCO MOMENTOS, UNA TRANSFORMACIÓN</p>
+        <p class="overline">SIETE ETAPAS, UNA VIDA COMPLETA</p>
         <h2>La vida no cambia<br><em>de un solo golpe.</em></h2>
-        <p class="section-intro">Cada etapa dejó una huella: algunas le dificultaron avanzar; otras le mostraron nuevas formas de vivir y relacionarse. Selecciona una tarjeta para descubrir la historia completa.</p>
+        <p class="section-intro">Desde la infancia hasta la vejez, cada etapa dejó una huella: algunas le dificultaron avanzar; otras le mostraron nuevas formas de vivir y relacionarse. Recorremos su vida ya vivida: la niñez, el trabajo, el matrimonio y la familia, y por último su papel de abuelo. Selecciona una tarjeta para descubrir la historia completa.</p>
       </div>
       <div class="timeline">
         <article class="chapter reveal">
@@ -670,7 +752,7 @@ body { font-size: 19px; line-height: 1.8; }
             <div class="chapter-copy">
               <p class="overline">CAPÍTULO I</p>
               <h3>Un hogar lleno<br>de silencios.</h3>
-              <p>Mateo nació en San Miguel y vivía con su madre, Elena, y su padre, Ricardo, en una casa modesta. Su madre trabajaba muchas horas y su padre, atravesando dificultades personales y económicas, tenía problemas para expresar sus emociones.</p>
+              <p>Mateo nació en 2008 en San Miguel. Durante sus primeros 5 años de vida, hasta 2013, vivió con su madre, Elena, y su padre, Ricardo, en una casa modesta. En ese período aprendió el lenguaje, los hábitos del hogar y las primeras normas de convivencia, a través de lo que sus padres hacían y decían cada día. Su madre trabajaba muchas horas y su padre, atravesando dificultades personales y económicas, tenía problemas para expresar sus emociones.</p>
               <p>No todo era tristeza: su madre le contaba historias antes de dormir y su abuela Rosa le enseñaba a cuidar las plantas del patio. Sin embargo, los conflictos familiares y la falta de comunicación le hicieron difícil expresar lo que sentía.</p>
               <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>El lenguaje, los hábitos y las primeras normas de convivencia; también observó formas poco saludables de resolver los desacuerdos.</p></div>
             </div>
@@ -680,7 +762,11 @@ body { font-size: 19px; line-height: 1.8; }
               <figcaption>01 / LAS PRIMERAS INFLUENCIAS</figcaption>
             </figure>
           </div>
-          <p class="chapter-institution"><span>ENTORNO PRINCIPAL</span> Familia <b>·</b> Madre, padre y abuela <b>·</b> Valores, hábitos y afecto</p>
+          <ul class="chapter-how"><li class="how-title">CÓMO SE DIO LA SOCIALIZACIÓN</li>
+            <li><b>Sus padres:</b> mediante el ejemplo diario y la imitación le enseñaron a hablar, a comer en familia y a respetar normas básicas; el silencio de su padre le enseñó, sin proponérselo, a callar lo que sentía.</li>
+            <li><b>Su madre y su abuela:</b> con cuentos antes de dormir y el cuidado de las plantas del patio le transmitieron afecto, valores y responsabilidad.</li>
+          </ul>
+          <p class="chapter-institution"><span>ENTORNO PRINCIPAL</span> Familia <b>·</b> Madre, padre y abuela <b>·</b> Valores, hábitos y afecto<br><span>TIPO DE SOCIALIZACIÓN</span> Primaria <b>·</b> Aprendió el lenguaje, las normas del hogar y las primeras formas de expresar emociones<br><span>CONCEPTO DE LA CLASE</span> La familia como primer grupo social y primer medio de control social informal; para Aristóteles, la primera comunidad del ser social</p>
         </article>
 
         <article class="chapter reveal">
@@ -695,12 +781,17 @@ body { font-size: 19px; line-height: 1.8; }
             <div class="chapter-copy">
               <p class="overline">CAPÍTULO II</p>
               <h3>El muchacho que<br>siempre estaba<br>en problemas.</h3>
-              <p>Al comenzar la escuela, Mateo tenía dificultades para concentrarse y reaccionaba mal cuando se sentía criticado. Interrumpía las clases, discutía con compañeros y dejaba tareas sin terminar.</p>
-              <p>La maestra Claudia Morales descubrió que era curioso, creativo y hábil para reparar objetos. Lo invitó a colaborar en una maqueta para una feria escolar. Por primera vez en mucho tiempo, Mateo sintió que alguien confiaba en él.</p>
+              <p>Mateo se incorporó en 2014 a la escuela. Durante 7 años, hasta 2020, estuvo aprendiendo a leer, a escribir, a cumplir reglas y a convivir con personas distintas. Al comenzar tenía dificultades para concentrarse y reaccionaba mal cuando se sentía criticado: interrumpía las clases, discutía con compañeros y dejaba tareas sin terminar.</p>
+              <p>La maestra Claudia Morales descubrió que era curioso, creativo y hábil para reparar objetos. Lo invitó a colaborar en una maqueta para una feria escolar. Por primera vez en mucho tiempo, Mateo sintió que alguien confiaba en él. Durante ese mismo período, su madre y su abuela lo incentivaban a seguir estudiando, recordándole que la escuela le abriría oportunidades que ellas no habían tenido.</p>
               <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>Que podía ganarse el reconocimiento colaborando, cumpliendo responsabilidades y utilizando sus habilidades.</p></div>
             </div>
           </div>
-          <p class="chapter-institution"><span>ENTORNO PRINCIPAL</span> Escuela <b>·</b> Docentes y compañeros <b>·</b> Colaboración, convivencia y responsabilidad</p>
+          <ul class="chapter-how"><li class="how-title">CÓMO SE DIO LA SOCIALIZACIÓN</li>
+            <li><b>La escuela:</b> mediante horarios, reglas, tareas y evaluaciones le enseñó a cumplir normas, a esperar su turno y a convivir con compañeros distintos.</li>
+            <li><b>La maestra Claudia:</b> le asignó una responsabilidad (la maqueta) y reconoció su esfuerzo, con lo que Mateo aprendió que se gana respeto cooperando.</li>
+            <li><b>La familia:</b> reforzó el proceso al animarlo a seguir estudiando y explicarle los beneficios de hacerlo.</li>
+          </ul>
+          <p class="chapter-institution"><span>ENTORNO PRINCIPAL</span> Escuela <b>·</b> Docentes y compañeros <b>·</b> Colaboración, convivencia y responsabilidad<br><span>TIPO DE SOCIALIZACIÓN</span> Secundaria <b>·</b> Reglas escolares, roles de estudiante y trabajo en equipo<br><span>CONCEPTO DE LA CLASE</span> Control social informal en la escuela y sanción informal positiva: el elogio y la confianza de la maestra Claudia; intersubjetividad</p>
         </article>
 
         <article class="chapter reveal">
@@ -710,7 +801,7 @@ body { font-size: 19px; line-height: 1.8; }
             <div class="chapter-copy">
               <p class="overline">CAPÍTULO III</p>
               <h3>El camino<br>equivocado.</h3>
-              <p>Durante la adolescencia, Mateo se acercó a un grupo de jóvenes que faltaban a clases y se burlaban de quienes intentaban estudiar. Con ellos se sentía aceptado, algo que había echado de menos durante años.</p>
+              <p>En 2021, a los 13 años, Mateo entró en la adolescencia y durante 3 años, hasta 2023, pasó gran parte de su tiempo con un grupo de jóvenes que faltaban a clases y se burlaban de quienes intentaban estudiar. Con ellos se sentía aceptado, algo que había echado de menos durante años.</p>
               <p>Sus calificaciones bajaron, discutía con su madre e ignoraba los consejos de sus maestros. Cuando perdió una oportunidad de participar en un proyecto escolar por sus ausencias, empezó a reconocer que sus decisiones estaban cerrándole puertas.</p>
               <p>Su abuela Rosa le recordó que sus errores formaban parte de su historia, pero no tenían por qué decidir todo su futuro. Mateo aún no sabía cómo cambiar, pero comenzó a considerar la posibilidad.</p>
               <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>Que el deseo de pertenecer puede llevar a decisiones perjudiciales y que las acciones tienen consecuencias.</p></div>
@@ -721,7 +812,12 @@ body { font-size: 19px; line-height: 1.8; }
               <figcaption>03 / LA INFLUENCIA DEL GRUPO</figcaption>
             </figure>
           </div>
-          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Familia, escuela y grupo de amigos <b>·</b> Pertenencia, presión social y consecuencias</p>
+          <ul class="chapter-how"><li class="how-title">CÓMO SE DIO LA SOCIALIZACIÓN</li>
+            <li><b>El grupo de amigos:</b> mediante la presión social, el deseo de aceptación y las burlas hacia quien estudiaba le enseñó normas opuestas a las de la escuela y la familia.</li>
+            <li><b>La familia y la abuela Rosa:</b> lo orientaron con límites y consejos, que al principio ignoró; su abuela apeló a su conciencia.</li>
+            <li><b>La escuela:</b> con una sanción formal (perder el proyecto por sus ausencias) le mostró las consecuencias de sus decisiones.</li>
+          </ul>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Familia, escuela y grupo de amigos <b>·</b> Pertenencia, presión social y consecuencias<br><span>TIPO DE SOCIALIZACIÓN</span> Secundaria <b>·</b> Influencia del grupo de pares, con normas que chocaban con las de la familia y la escuela<br><span>CONCEPTO DE LA CLASE</span> Desviación (faltar a clases) que su grupo aprobaba y la escuela reprobaba; sanción informal (aceptación del grupo) y sanción formal (perder el proyecto escolar)</p>
         </article>
 
         <article class="chapter reveal">
@@ -736,34 +832,96 @@ body { font-size: 19px; line-height: 1.8; }
             <div class="chapter-copy">
               <p class="overline">CAPÍTULO IV</p>
               <h3>La primera decisión<br>diferente.</h3>
-              <p>Mateo decidió retomar sus estudios con mayor seriedad. No recuperó todas las materias de inmediato ni dejó de discutir de un día para otro; tuvo que reconstruir la confianza de su madre y aprender a cumplir sus compromisos.</p>
+              <p>En 2024, a los 16 años, Mateo decidió retomar sus estudios con mayor seriedad y durante 2 años, hasta 2025, fue reconstruyendo su rumbo. No recuperó todas las materias de inmediato ni dejó de discutir de un día para otro; tuvo que reconstruir la confianza de su madre y aprender a cumplir sus compromisos.</p>
               <p>Un vecino que reparaba equipos eléctricos le permitió ayudar en un pequeño taller comunitario. Allí descubrió que disfrutaba resolver problemas técnicos y trabajar con sus manos.</p>
               <p>Se distanció de las amistades que lo presionaban para faltar a clases y se acercó a compañeros con intereses similares. Poco a poco, empezó a imaginar un futuro concreto.</p>
               <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>La responsabilidad también significa respetar su propio tiempo y el de los demás; el cambio requiere práctica y constancia.</p></div>
             </div>
           </div>
-          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Familia, escuela y comunidad <b>·</b> Perseverancia, autonomía y confianza</p>
+          <ul class="chapter-how"><li class="how-title">CÓMO SE DIO LA SOCIALIZACIÓN</li>
+            <li><b>La familia:</b> le exigió reconstruir la confianza cumpliendo compromisos concretos, día tras día.</li>
+            <li><b>El vecino del taller:</b> le enseñó un oficio observando, practicando y recibiendo correcciones, es decir, aprendiendo haciendo.</li>
+            <li><b>Sus nuevos compañeros:</b> con intereses similares reforzaron sus hábitos de estudio y su deseo de cambiar.</li>
+          </ul>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Familia, escuela y comunidad <b>·</b> Perseverancia, autonomía y confianza<br><span>TIPO DE SOCIALIZACIÓN</span> Secundaria con inicio de resocialización <b>·</b> Cambió de grupo y de hábitos; el taller le dio un primer contacto con el mundo laboral<br><span>CONCEPTO DE LA CLASE</span> El «sí mismo» de Mead: dejó de verse como «el problema» al ser reconocido por otros; agencia frente al habitus de su entorno (Bourdieu)</p>
+        </article>
+
+        <article class="chapter reveal">
+          <div class="chapter-marker"><span>05</span><i></i></div>
+          <div class="chapter-meta"><span>2026–2035</span><span>18–27 AÑOS</span></div>
+          <div class="chapter-grid">
+            <div class="chapter-copy">
+              <p class="overline">CAPÍTULO V · EL TRABAJO</p>
+              <h3>El oficio que<br>lo hizo adulto.</h3>
+              <p>Mateo terminó la educación media a finales de 2025 y en 2026 comenzó a formarse en tecnología. Durante 9 años, hasta 2035, estudió y trabajó al mismo tiempo: estudiaba por las mañanas y por las tardes se empleaba en el mismo taller donde había aprendido de niño. Tuvo que administrar mejor su tiempo, organizar sus gastos y responder a nuevas exigencias académicas.</p>
+              <p>Su primer empleo formal fue como técnico de soporte en una pequeña empresa de San Miguel. Allí aprendió a cumplir horarios, a recibir órdenes y críticas de sus jefes, a tratar con clientes molestos y a trabajar en equipo con compañeros de distintas edades. Todavía sentía frustración cuando algo no salía como esperaba, pero aprendió a pedir ayuda, escuchar y reconocer sus errores. Con los años, el trabajo fue para él mucho más que un ingreso: le dio estabilidad, identidad y un lugar en la sociedad.</p>
+              <p>Los fines de semana colaboraba como voluntario en actividades comunitarias de apoyo escolar. Al conocer a un adolescente que pensaba abandonar sus estudios, decidió escucharlo sin juzgarlo y compartir lo que había aprendido.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>La disciplina laboral, la autonomía económica, la ética profesional y el valor de contribuir al bienestar de otras personas.</p></div>
+            </div>
+            <figure class="chapter-image image-frame" data-image="imagenes/capitulo-futuro.jpg" data-label="Mateo se forma y comienza su vida laboral">
+              <img src="imagenes/capitulo-futuro.jpg" alt="Joven que estudia y se prepara para su primer trabajo" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 05</span><strong>capitulo-futuro.jpg</strong><small>Formación y primer trabajo.</small></div>
+              <figcaption>05 / EL PRIMER TRABAJO</figcaption>
+            </figure>
+          </div>
+          <ul class="chapter-how"><li class="how-title">CÓMO SE DIO LA SOCIALIZACIÓN</li>
+            <li><b>La formación profesional:</b> le exigió autonomía, organización del tiempo y responsabilidad por sus propios resultados.</li>
+            <li><b>La empresa:</b> mediante contratos, horarios, jefes y la crítica de sus compañeros le enseñó los roles de empleado y de miembro de un equipo.</li>
+            <li><b>El voluntariado comunitario:</b> le transmitió ética y compromiso social al ponerlo a ayudar a otros.</li>
+          </ul>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Formación profesional, empresa y comunidad <b>·</b> Disciplina, autonomía y ética<br><span>TIPO DE SOCIALIZACIÓN</span> Terciaria (laboral) <b>·</b> Normas de la empresa, jerarquías, roles de empleado y compañero, y adaptación a la vida adulta<br><span>CONCEPTO DE LA CLASE</span> Control social formal en el trabajo (contrato, leyes laborales, despido, ascensos y bonos); el trabajo como área de la dinámica social; vínculo hombre-tecnología</p>
+        </article>
+
+        <article class="chapter reveal">
+          <div class="chapter-marker"><span>06</span><i></i></div>
+          <div class="chapter-meta"><span>2036–2068</span><span>28–60 AÑOS</span></div>
+          <div class="chapter-grid chapter-grid-reverse">
+            <figure class="chapter-image image-frame" data-image="imagenes/institucion-familia.jpg" data-label="Mateo conforma su propia familia">
+              <img src="imagenes/institucion-familia.jpg" alt="Una familia reunida a la mesa, símbolo del hogar que Mateo formó" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 06</span><strong>institucion-familia.jpg</strong><small>Matrimonio y familia propia.</small></div>
+              <figcaption>06 / EL HOGAR QUE ÉL CONSTRUYÓ</figcaption>
+            </figure>
+            <div class="chapter-copy">
+              <p class="overline">CAPÍTULO VI · MATRIMONIO Y FAMILIA</p>
+              <h3>El hogar que<br>él construyó.</h3>
+              <p>En 2036, a los 28 años, Mateo se casó con Daniela, a quien conoció en las actividades de voluntariado comunitario. Durante 32 años, hasta 2068, construyeron juntos una familia: nacieron Sofía y Lucas. Mateo asumió los nuevos roles de esposo y padre, y con ellos nuevas responsabilidades: sostener económicamente el hogar, repartir las tareas con su pareja y estar presente en la vida de sus hijos.</p>
+              <p>Recordaba bien el hogar lleno de silencios en el que creció, y decidió educar de otra manera: conversaba con sus hijos, les pedía que expresaran lo que sentían, resolvía los desacuerdos hablando y les transmitió el valor del estudio y de cumplir los compromisos. No fue perfecto: también repitió algunos hábitos que había aprendido de pequeño y tuvo que corregirlos con ayuda de Daniela. En el trabajo se convirtió en jefe de un equipo técnico y luego abrió su propio taller, donde empleó a jóvenes de su comunidad y les dio la oportunidad que él había recibido.</p>
+              <p>Sus hijos también le enseñaron a él: la manera de usar nuevas tecnologías, el lenguaje de su generación y la paciencia necesaria para escuchar. Su hogar dejó de ser solo el lugar donde él aprendía y pasó a ser el lugar desde donde enseñaba.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>Que ser esposo y padre implica compromiso, comunicación y ser un ejemplo; y que las familias se construyen con decisiones conscientes, no solo con lo heredado.</p></div>
+            </div>
+          </div>
+          <ul class="chapter-how"><li class="how-title">CÓMO SE DIO LA SOCIALIZACIÓN</li>
+            <li><b>El matrimonio:</b> lo obligó a negociar roles, tareas y decisiones con Daniela; aprendió a ser pareja conversando y llegando a acuerdos.</li>
+            <li><b>Su familia propia:</b> como padre socializó a Sofía y a Lucas mediante el diálogo, el ejemplo y los límites, y rompió el patrón de silencio con que él creció; sus hijos, a su vez, le enseñaron nuevas tecnologías.</li>
+            <li><b>El taller propio:</b> le enseñó a liderar, a emplear a otros y a formar jóvenes como él.</li>
+          </ul>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Matrimonio, familia propia, trabajo y comunidad <b>·</b> Compromiso, comunicación y ejemplo<br><span>TIPO DE SOCIALIZACIÓN</span> Primaria para sus hijos (Mateo como agente socializador) y terciaria para él <b>·</b> Aprendió los roles de esposo, padre y empleador; también hubo socialización inversa, pues sus hijos le enseñaron a él<br><span>CONCEPTO DE LA CLASE</span> La familia como primer grupo social; el matrimonio y las leyes de familia como medios formales; transformación de la vida cotidiana por la tecnología y las redes sociales</p>
         </article>
 
         <article class="chapter reveal chapter-last">
-          <div class="chapter-marker"><span>05</span><i></i></div>
-          <div class="chapter-meta"><span>2026 EN ADELANTE</span><span>18 AÑOS EN ADELANTE</span></div>
+          <div class="chapter-marker"><span>07</span><i></i></div>
+          <div class="chapter-meta"><span>2069 EN ADELANTE</span><span>61 AÑOS EN ADELANTE</span></div>
           <div class="chapter-grid">
             <div class="chapter-copy">
-              <p class="overline">CAPÍTULO V</p>
-              <h3>Aprender a<br>empezar de nuevo.</h3>
-              <p>Después de completar la educación media, Mateo decidió continuar formándose en un área relacionada con la tecnología. Tuvo que administrar mejor su tiempo, organizar sus gastos y responder a nuevas exigencias académicas.</p>
-              <p>En sus nuevos entornos conoció personas con experiencias y perspectivas diferentes. Todavía sentía frustración cuando algo no salía como esperaba, pero aprendió a pedir ayuda, escuchar críticas y reconocer sus errores.</p>
-              <p>Más adelante comenzó a colaborar como voluntario en actividades comunitarias de apoyo escolar. Al conocer a un adolescente que pensaba abandonar sus estudios, decidió escucharlo sin juzgarlo y compartir lo que había aprendido.</p>
-              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>La autonomía, la ética, la adaptación a nuevos roles y el valor de contribuir al bienestar de otras personas.</p></div>
+              <p class="overline">CAPÍTULO VII · LA VEJEZ</p>
+              <h3>El abuelo que<br>contaba historias.</h3>
+              <p>Desde 2069, cuando cumplió 61 años, Mateo vivió su vejez rodeado de su familia. A los 65 años se jubiló y dejó el taller en manos de uno de los jóvenes que había formado. Para entonces ya era abuelo: Sofía y Lucas habían formado sus propias familias y la casa se llenaba de nietos los domingos. Pasó de ser el proveedor del hogar a ser el consejero de la familia.</p>
+              <p>En la vejez se dedicó a transmitir lo que había vivido: contaba a sus nietos historias antes de dormir, igual que su madre Elena lo hacía con él, les enseñaba a cuidar las plantas del patio como su abuela Rosa le había enseñado, y les hablaba con honestidad de sus errores de juventud para que entendieran que siempre se puede empezar de nuevo. Siguió participando en la comunidad como voluntario y mentor, y también aprendió de sus nietos y aceptó los cambios de su cuerpo, de su rutina y de su lugar en la familia.</p>
+              <p>El círculo se cerró: el niño que creció entre silencios se convirtió en el abuelo que escuchaba, y las enseñanzas que recibió de su familia pasaron, mejoradas, a una nueva generación.</p>
+              <div class="learning-note"><span>LO QUE APRENDIÓ</span><p>Que la vejez también es una etapa de aprendizaje, de transmitir la experiencia a las nuevas generaciones y de aceptar los cambios de la vida con serenidad.</p></div>
             </div>
-            <figure class="chapter-image image-frame" data-image="imagenes/capitulo-futuro.jpg" data-label="Mateo mira hacia un futuro distinto">
-              <img src="imagenes/capitulo-futuro.jpg" alt="Joven estudiante mirando un horizonte iluminado" loading="lazy">
-              <div class="image-placeholder"><span>CAPÍTULO 05</span><strong>capitulo-futuro.jpg</strong><small>Formación, autonomía y futuro.</small></div>
-              <figcaption>05 / UNA NUEVA FORMA DE MIRAR EL FUTURO</figcaption>
+            <figure class="chapter-image image-frame" data-image="imagenes/institucion-comunidad.jpg" data-label="Mateo, ya abuelo, transmite lo aprendido">
+              <img src="imagenes/institucion-comunidad.jpg" alt="Una persona que acompaña a un niño en sus tareas, símbolo de la transmisión entre generaciones" loading="lazy">
+              <div class="image-placeholder"><span>CAPÍTULO 07</span><strong>institucion-comunidad.jpg</strong><small>Vejez y transmisión entre generaciones.</small></div>
+              <figcaption>07 / LO APRENDIDO SE HEREDA</figcaption>
             </figure>
           </div>
-          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Formación profesional, trabajo y comunidad <b>·</b> Autonomía, ética y compromiso social</p>
+          <ul class="chapter-how"><li class="how-title">CÓMO SE DIO LA SOCIALIZACIÓN</li>
+            <li><b>La familia extensa:</b> como abuelo socializó a sus nietos con cuentos, consejos y el ejemplo de sus decisiones; los nietos le enseñaron lo nuevo de su época.</li>
+            <li><b>La jubilación:</b> lo llevó a adaptarse a un rol distinto: ya no proveedor, sino consejero.</li>
+            <li><b>La comunidad:</b> lo reconoció con respeto y prestigio como mentor.</li>
+          </ul>
+          <p class="chapter-institution"><span>ENTORNOS PRINCIPALES</span> Familia extensa (hijos y nietos), comunidad y jubilación <b>·</b> Experiencia, sabiduría y legado<br><span>TIPO DE SOCIALIZACIÓN</span> Terciaria (rol de jubilado y abuelo) <b>·</b> Adaptación a un nuevo rol social; socialización de los nietos desde la experiencia y socialización inversa en lo tecnológico<br><span>CONCEPTO DE LA CLASE</span> Desarrollo humano a lo largo de la vida (salud, educación, ingreso); sanción informal positiva: estatus, respeto y prestigio comunitario; la IA y el trabajo en la vejez</p>
         </article>
       </div>
     </section>
@@ -774,7 +932,7 @@ body { font-size: 19px; line-height: 1.8; }
       <div class="section-heading reveal">
         <p class="overline">LAS PERSONAS Y LOS GRUPOS QUE NOS FORMAN</p>
         <h2>Nadie crece<br><em>completamente solo.</em></h2>
-        <p class="section-intro">En la historia de Mateo, cada entorno cumplió un papel distinto. Algunas influencias le pusieron obstáculos; otras le ayudaron a encontrar nuevas posibilidades.</p>
+        <p class="section-intro">En la historia de Mateo, cada entorno cumplió un papel distinto a lo largo de toda su vida. Algunas influencias le pusieron obstáculos; otras le ayudaron a encontrar nuevas posibilidades.</p>
       </div>
       <div class="institution-grid">
         <article class="institution-card reveal">
@@ -782,28 +940,28 @@ body { font-size: 19px; line-height: 1.8; }
             <img src="imagenes/institucion-familia.jpg" alt="Familia reunida en casa" loading="lazy">
             <div class="image-placeholder"><span>INSTITUCIÓN 01</span><strong>institucion-familia.jpg</strong><small>Familia y hogar.</small></div>
           </figure>
-          <div class="institution-card-copy"><span class="card-number">01 / PRIMER ENTORNO</span><h3>La familia</h3><p>Transmitió las primeras normas, costumbres y formas de relacionarse. El afecto de su madre y su abuela fue importante para que Mateo encontrara apoyo y motivación.</p><div class="tag-row"><span>Valores</span><span>Hábitos</span><span>Afecto</span></div></div>
+          <div class="institution-card-copy"><span class="card-number">01 / PRIMER ENTORNO Y FAMILIA PROPIA</span><h3>La familia</h3><p>Transmitió las primeras normas, costumbres y formas de relacionarse. El afecto de su madre y su abuela fue importante para que Mateo encontrara apoyo y motivación. Más adelante, con su matrimonio y sus hijos, la familia pasó de ser el entorno que lo formó a ser el entorno que él formó; y en la vejez, el lugar donde transmitió su experiencia a sus nietos.</p><div class="tag-row"><span>Valores</span><span>Hábitos</span><span>Afecto</span><span>Matrimonio</span></div><div class="card-story"><p>Los domingos por la mañana, la abuela Rosa llevaba a Mateo al patio para regar las plantas. Con apenas cuatro años, aprendió que lo que se cuida crece y que para eso hay que ser constante. Por las noches, su madre Elena le contaba historias antes de dormir; con ellas aprendió a escuchar y a imaginar.</p><p>En ese mismo hogar vio también a su padre guardar silencio cuando algo le dolía. Años después, cuando Mateo formó su propia familia, recordó esas dos herencias —la ternura de las historias y el peso del silencio— y decidió quedarse solo con la primera.</p></div></div>
         </article>
         <article class="institution-card reveal">
           <figure class="institution-photo image-frame" data-image="imagenes/institucion-escuela.jpg" data-label="La escuela y los docentes">
             <img src="imagenes/institucion-escuela.jpg" alt="Docente acompaña a estudiantes en un proyecto escolar" loading="lazy">
             <div class="image-placeholder"><span>INSTITUCIÓN 02</span><strong>institucion-escuela.jpg</strong><small>Educación y convivencia.</small></div>
           </figure>
-          <div class="institution-card-copy"><span class="card-number">02 / APRENDIZAJE SOCIAL</span><h3>La escuela</h3><p>Le enseñó a convivir con personas distintas, cumplir reglas y colaborar. La confianza de una docente le permitió descubrir capacidades que no reconocía en sí mismo.</p><div class="tag-row"><span>Convivencia</span><span>Disciplina</span><span>Cooperación</span></div></div>
+          <div class="institution-card-copy"><span class="card-number">02 / APRENDIZAJE SOCIAL</span><h3>La escuela</h3><p>Le enseñó a convivir con personas distintas, cumplir reglas y colaborar. La confianza de una docente le permitió descubrir capacidades que no reconocía en sí mismo.</p><div class="tag-row"><span>Convivencia</span><span>Disciplina</span><span>Cooperación</span></div><div class="card-story"><p>En su segundo año de escuela, Mateo rompió el reloj de la maestra de un manotazo, enojado por una corrección. En lugar de castigarlo sin más, la maestra Claudia le pidió que lo reparara. Lo logró en una tarde con un destornillador prestado, y desde entonces lo llamaba cuando algo se descomponía en el aula.</p><p>De ese episodio salió la maqueta para la feria escolar de 2019, en la que trabajó un mes con tres compañeros. Por primera vez, Mateo aprendió que sus habilidades servían para el grupo y que cumplir con los demás también era una forma de ganarse el respeto.</p></div></div>
         </article>
         <article class="institution-card reveal">
           <figure class="institution-photo image-frame" data-image="imagenes/institucion-amigos.jpg" data-label="El grupo de amigos">
             <img src="imagenes/institucion-amigos.jpg" alt="Grupo de adolescentes conversando en un espacio público" loading="lazy">
             <div class="image-placeholder"><span>INSTITUCIÓN 03</span><strong>institucion-amigos.jpg</strong><small>Amistad y pertenencia.</small></div>
           </figure>
-          <div class="institution-card-copy"><span class="card-number">03 / IDENTIDAD Y PERTENENCIA</span><h3>Los grupos de amigos</h3><p>Influyeron en sus gustos y decisiones. La historia muestra que la necesidad de pertenecer puede llevar a conductas negativas, pero también existen amistades que estimulan el crecimiento.</p><div class="tag-row"><span>Identidad</span><span>Pertenencia</span><span>Influencia</span></div></div>
+          <div class="institution-card-copy"><span class="card-number">03 / IDENTIDAD Y PERTENENCIA</span><h3>Los grupos de amigos</h3><p>Influyeron en sus gustos y decisiones. La historia muestra que la necesidad de pertenecer puede llevar a conductas negativas, pero también existen amistades que estimulan el crecimiento.</p><div class="tag-row"><span>Identidad</span><span>Pertenencia</span><span>Influencia</span></div><div class="card-story"><p>En 2022, el grupo de Mateo se juntaba en la esquina de la escuela cuando tocaba la hora de matemáticas. Él no quería faltar, pero le daba más miedo quedarse solo que reprobar. Cuando un compañero lo llamó «matado» por entregar una tarea, rompió la hoja delante de todos para que lo dejaran en paz.</p><p>Dos años después, en el taller y en un nuevo grupo de estudio, descubrió otra forma de pertenecer: compañeros que lo esperaban para estudiar juntos y celebraban sus avances. Era la misma necesidad de ser aceptado, pero con un resultado opuesto.</p></div></div>
         </article>
         <article class="institution-card reveal">
           <figure class="institution-photo image-frame" data-image="imagenes/institucion-comunidad.jpg" data-label="El taller y la comunidad">
             <img src="imagenes/institucion-comunidad.jpg" alt="Personas colaborando en un taller comunitario" loading="lazy">
             <div class="image-placeholder"><span>INSTITUCIÓN 04</span><strong>institucion-comunidad.jpg</strong><small>Trabajo y participación social.</small></div>
           </figure>
-          <div class="institution-card-copy"><span class="card-number">04 / NUEVOS ROLES</span><h3>La comunidad y el trabajo</h3><p>Le ofrecieron oportunidades para practicar habilidades, asumir compromisos y contribuir a los demás. Su participación comunitaria también le ayudó a dar un nuevo sentido a su experiencia.</p><div class="tag-row"><span>Responsabilidad</span><span>Autonomía</span><span>Servicio</span></div></div>
+          <div class="institution-card-copy"><span class="card-number">04 / VIDA ADULTA Y NUEVOS ROLES</span><h3>El trabajo y la comunidad</h3><p>Le ofrecieron oportunidades para practicar habilidades, asumir compromisos y contribuir a los demás. En el trabajo aprendió disciplina, jerarquías y trabajo en equipo; luego, como dueño de su taller, ofreció empleo a otros jóvenes. Su participación comunitaria le ayudó a dar un nuevo sentido a su experiencia.</p><div class="tag-row"><span>Trabajo</span><span>Autonomía</span><span>Servicio</span></div><div class="card-story"><p>En 2024, el vecino don Chepe, que reparaba radios y ventiladores, le permitió ayudarle un sábado. Mateo llegó una hora tarde; don Chepe no lo regañó, solo le dijo que el taller abría a las ocho y que quien llega tarde deja el trabajo a medias. El sábado siguiente llegó a las siete y media.</p><p>Con los años, ese taller fue su primer trabajo: recibió su primer pago, 5 dólares por un ventilador reparado, y se lo entregó a su madre. Cuando abrió su propio taller, colgó en la pared la misma regla de don Chepe: «Abrimos a las ocho».</p></div></div>
         </article>
       </div>
     </section>
@@ -821,33 +979,122 @@ body { font-size: 19px; line-height: 1.8; }
           <div class="stage-index">I</div>
           <div class="stage-main"><p class="overline">INFANCIA</p><h3>Socialización primaria</h3><p>Se desarrolla principalmente durante los primeros años de vida, cuando aprendemos las primeras normas, hábitos y formas de convivencia.</p></div>
           <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Su familia le enseñó el lenguaje, las costumbres del hogar, el respeto y las primeras maneras de expresar sus emociones.</p><span class="stage-result">Familia → primeros valores y hábitos</span></div>
+                  <div class="card-story"><p>Antes de entrar a la escuela, Mateo ya sabía cuándo hablar y cuándo callar en su casa: aprendió a saludar a los mayores, a decir «gracias» y a no interrumpir en la mesa. También aprendió, observando, que cuando había discusiones lo mejor era irse al patio con su abuela.</p><p>Lo que aprendió bien (el respeto, el cuidado) le sirvió toda la vida; lo que aprendió mal (callar las emociones) tuvo que desaprenderlo de adulto. Así, la socialización primaria deja huellas profundas, pero no definitivas.</p></div>
         </article>
         <article class="social-stage reveal">
           <div class="stage-index">II</div>
           <div class="stage-main"><p class="overline">ESCUELA Y OTROS GRUPOS</p><h3>Socialización secundaria</h3><p>Se amplía cuando la persona participa en espacios fuera del hogar y aprende nuevas reglas, roles y maneras de relacionarse.</p></div>
           <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>La escuela, los docentes y sus amistades influyeron en su convivencia, su sentido de pertenencia, su responsabilidad y sus decisiones.</p><span class="stage-result">Escuela y grupos → roles y convivencia</span></div>
+                  <div class="card-story"><p>En la escuela y con sus amistades, Mateo aprendió dos conjuntos de reglas que no siempre coincidían: las de las aulas (puntualidad, tareas, respeto a los docentes) y las del grupo (aguantar burlas, no destacar, faltar juntos). Tuvo que elegir cuáles obedecer cuando no podía cumplir las dos.</p><p>En 2023, perder el proyecto escolar por sus ausencias le mostró que cada elección tenía un costo. Para él, esta etapa fue el lugar donde descubrió que pertenecer a un grupo no es lo mismo que ser uno mismo.</p></div>
         </article>
         <article class="social-stage reveal">
           <div class="stage-index">III</div>
-          <div class="stage-main"><p class="overline">NUEVOS ENTORNOS Y ROLES</p><h3>Socialización terciaria</h3><p>Para este trabajo, se presenta como la adaptación a nuevos entornos y responsabilidades durante la transición a la vida adulta, de acuerdo con el enfoque que se utilice en clase.</p></div>
-          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>La formación profesional, el trabajo y la participación comunitaria le ayudaron a desarrollar autonomía, ética y compromiso social.</p><span class="stage-result">Nuevos entornos → adaptación y autonomía</span></div>
+          <div class="stage-main"><p class="overline">VIDA ADULTA Y VEJEZ</p><h3>Socialización terciaria</h3><p>Para este trabajo, se presenta como la adaptación a nuevos entornos y roles durante la vida adulta y la vejez (trabajo, matrimonio, paternidad, jubilación y rol de abuelo), de acuerdo con el enfoque que se utilice en clase.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>El trabajo, su matrimonio, la crianza de sus hijos y, más tarde, su papel de abuelo le exigieron aprender nuevos roles a lo largo de toda su vida adulta. Allí desarrolló autonomía, ética y compromiso social, y pasó de ser educado a ser quien educa.</p><span class="stage-result">Trabajo, familia propia y vejez → nuevos roles y transmisión</span></div>
+                  <div class="card-story"><p>En 2026, en su primer empleo, Mateo tuvo que aprender reglas que nadie le había enseñado antes: cómo hablarle a un cliente molesto, cómo pedir ayuda a un jefe, cómo cumplir un contrato. Años después tuvo que aprender otras: cómo ser esposo, cómo ser padre y cómo ser jefe.</p><p>Ya mayor, aprendió una más: ser abuelo y aceptar que ya no era quien sostenía la casa. La socialización terciaria no terminó nunca; cada nuevo rol le pidió aprender de nuevo y, a su vez, enseñar lo que ya sabía.</p></div>
         </article>
       </div>
       <p class="academic-note"><strong>Nota académica:</strong> el uso del término “socialización terciaria” puede variar según el marco teórico de cada curso. Esta sección debe ajustarse a la definición utilizada por el docente si difiere de la aquí presentada.</p>
     </section>
 
+    <!-- CONTROL SOCIAL -->
+    <section class="socialization section-light section-pad" id="control-social" data-dialog-label="CONTROL SOCIAL">
+      <div class="section-kicker reveal"><span>05</span> / CONTROL SOCIAL</div>
+      <div class="section-heading reveal">
+        <p class="overline">NORMAS, DESVIACIÓN Y SANCIONES</p>
+        <h2>Cómo la sociedad<br><em>orienta la conducta.</em></h2>
+        <p class="section-intro">El control social es el conjunto de mecanismos, normas, instituciones y valores que una sociedad utiliza para regular la conducta de sus miembros y mantener el orden. Puede ser informal (familia, escuela, amigos, religión, redes) o formal (leyes, policía, tribunales, instituciones administrativas). Así actuó en cada etapa de la vida de Mateo.</p>
+      </div>
+      <div class="socialization-list">
+        <article class="social-stage reveal">
+          <div class="stage-index">I</div>
+          <div class="stage-main"><p class="overline">MEDIOS INFORMALES</p><h3>Familia, escuela, pares y comunidad</h3><p>Operan mediante la socialización cotidiana y la interacción personal. No dependen de leyes escritas, sino de la internalización de pautas culturales y normas morales.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Los límites de su madre Elena, los consejos de su abuela Rosa, la confianza de la maestra Claudia y la presión de su grupo de amigos lo orientaron mucho antes de que existiera una ley que lo hiciera.</p><span class="stage-result">Control informal → normas internalizadas</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">II</div>
+          <div class="stage-main"><p class="overline">MEDIOS FORMALES</p><h3>Leyes, reglamentos e instituciones</h3><p>Son estructurados e institucionalizados, y están respaldados por el poder coercitivo del Estado. Intervienen cuando los controles informales no son suficientes.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>El reglamento escolar y su expediente académico, el contrato y las leyes laborales de sus empleos, el matrimonio civil, los impuestos y permisos de su taller y, al final, su jubilación.</p><span class="stage-result">Control formal → reglas escritas y consecuencias</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">III</div>
+          <div class="stage-main"><p class="overline">DESVIACIÓN</p><h3>Lo desviado depende de quién juzga</h3><p>Una desviación es cualquier acto que viola las normas de una colectividad y conlleva una sanción. No es una característica del acto en sí: depende de la respuesta que le da cada grupo, época y situación. Para Durkheim, «no lo reprobamos porque es un crimen, sino que es un crimen porque lo reprobamos».</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Faltar a clases y burlarse de quienes estudiaban era desviación para su escuela y su familia, pero en su grupo de amigos lo hacía sentirse aceptado. La misma conducta recibió respuestas opuestas según el contexto situacional.</p><span class="stage-result">Desviación → depende del grupo y del contexto</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">IV</div>
+          <div class="stage-main"><p class="overline">SANCIONES INFORMALES</p><h3>Reprobación y aprobación social</h3><p>Son reacciones de la vida cotidiana, sin código legal: miradas, burlas, ostracismo, chisme o «cancelación» (negativas); elogios, afecto, estatus y prestigio (positivas).</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Las discusiones con su madre y la burla de sus compañeros fueron sanciones negativas; el elogio de la maestra Claudia, la aceptación de sus nuevos compañeros y el respeto de su comunidad como mentor fueron sanciones positivas.</p><span class="stage-result">Sanción informal → aprobación o rechazo del grupo</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">V</div>
+          <div class="stage-main"><p class="overline">SANCIONES FORMALES</p><h3>Castigos y recompensas institucionales</h3><p>Son aplicadas por autoridades con procedimientos escritos. Las negativas incluyen multas, suspensiones y expulsiones; las positivas, diplomas, becas, ascensos y bonos.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Perdió la oportunidad de participar en un proyecto escolar por sus ausencias (sanción formal negativa) y más adelante recibió su título técnico y ascensos en el trabajo (sanciones formales positivas).</p><span class="stage-result">Sanción formal → consecuencias oficiales</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">VI</div>
+          <div class="stage-main"><p class="overline">INTERNALIZACIÓN</p><h3>Cuando la norma ya vive dentro</h3><p>El control social más profundo no necesita vigilancia: la persona asume la norma como propia y se autorregula por su conciencia y sus valores.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Con el tiempo, Mateo ya no cumplía sus compromisos por miedo al castigo, sino porque había hecho suyos los valores que aprendió. Eso fue lo que transmitió a sus hijos y a sus nietos.</p><span class="stage-result">Control social → autocontrol y ética</span></div>
+        </article>
+      </div>
+      <p class="academic-note"><strong>Nota académica:</strong> los medios y tipos de sanción se presentan según la clasificación de la sociología y el derecho que se revisó en clase (Bloque 2, semana 12).</p>
+    </section>
+
+    <!-- TEORIAS: EL SER HUMANO Y LA SOCIEDAD -->
+    <section class="socialization section-sand section-pad" id="teorias" data-dialog-label="EL SER HUMANO Y LA SOCIEDAD">
+      <div class="section-kicker reveal"><span>06</span> / EL SER HUMANO Y LA SOCIEDAD</div>
+      <div class="section-heading reveal">
+        <p class="overline">TEORÍAS PARA LEER UNA VIDA</p>
+        <h2>Una sola vida,<br><em>muchas miradas.</em></h2>
+        <p class="section-intro">Los autores y conceptos vistos en clase ayudan a explicar por qué Mateo fue quien fue, por qué pudo cambiar y cómo la sociedad y la tecnología atravesaron toda su historia.</p>
+      </div>
+      <div class="socialization-list">
+        <article class="social-stage reveal">
+          <div class="stage-index">I</div>
+          <div class="stage-main"><p class="overline">ARISTÓTELES</p><h3>Un ser social por naturaleza</h3><p>El ser humano es social y político por naturaleza: la familia es la primera comunidad, pero no basta para satisfacer todas sus necesidades, y por eso se forman aldeas y ciudades. Quien no puede vivir en sociedad es «una bestia o un dios».</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Mateo no pudo cambiar solo. Necesitó a su madre, a su abuela, a una maestra, a un vecino que lo acogió en su taller y, después, a su propia familia. Cada comunidad le dio algo que la anterior no podía darle.</p><span class="stage-result">Nadie se desarrolla aislado</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">II</div>
+          <div class="stage-main"><p class="overline">MEAD E INTERACCIONISMO SIMBÓLICO</p><h3>El «sí mismo» se construye con otros</h3><p>El «yo» no nace completo: surge de la comunicación y de la capacidad de adoptar el rol del otro y del «otro generalizado». Nos vemos a través de cómo nos ven.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Durante años Mateo se vio como «el muchacho que siempre estaba en problemas», tal como lo veían en la escuela. Cuando la maestra Claudia confió en él, empezó a verse también como alguien capaz.</p><span class="stage-result">Identidad → reflejo de la mirada del otro</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">III</div>
+          <div class="stage-main"><p class="overline">BOURDIEU</p><h3>Habitus, estructura y agencia</h3><p>Las estructuras sociales (clase, instituciones, poder) moldean las oportunidades y trayectorias de las personas, pero los seres humanos tienen agencia: la capacidad reflexiva de actuar, resistir y transformar su situación.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Su hogar modesto y su entorno condicionaron sus primeras opciones; sin embargo, sus decisiones (cambiar de amigos, retomar los estudios, aprender un oficio) muestran agencia. Por eso el pasado explica, pero no decide el final.</p><span class="stage-result">Estructura condiciona · agencia transforma</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">IV</div>
+          <div class="stage-main"><p class="overline">WEBER, BERGER Y LUCKMANN</p><h3>Acción social e intersubjetividad</h3><p>La conducta humana es acción social: tiene un sentido compartido y se orienta hacia los demás. Al relacionarnos influimos y somos influidos (intersubjetividad), y la realidad social se construye por la socialización y el lenguaje.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>La relación de Mateo con su madre, con Daniela, con sus hijos y con sus nietos fue siempre de influencia mutua: él cambió a los demás y los demás lo cambiaron a él. Fue «yo» y «nosotros» a la vez.</p><span class="stage-result">Somos «yo» y «nosotros» al mismo tiempo</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">V</div>
+          <div class="stage-main"><p class="overline">DESARROLLO HUMANO</p><h3>Más que crecimiento económico</h3><p>Es el proceso por el cual se amplían las capacidades y opciones de las personas: salud, educación y nivel de vida digno. El Índice de Desarrollo Humano (PNUD) mide esperanza de vida, educación e ingreso; para El Salvador, el informe citado en clase señala 0,675 en 2021.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>El cambio de Mateo fue también un proceso de desarrollo humano: accedió a educación, aprendió un oficio, obtuvo ingresos dignos y vivió una vejez saludable. Su historia muestra que la oportunidad educativa abre opciones.</p><span class="stage-result">Educación + salud + ingreso → más opciones</span></div>
+        </article>
+        <article class="social-stage reveal">
+          <div class="stage-index">VI</div>
+          <div class="stage-main"><p class="overline">SOCIOLOGÍA DE LA TECNOLOGÍA</p><h3>Hombre, trabajo e inteligencia artificial</h3><p>La tecnología no es solo una herramienta: la sociedad la construye (constructivismo social) y a la vez reconfigura el trabajo, la identidad y los vínculos. La IA plantea nuevos desafíos: precariedad laboral, vigilancia de datos y sesgos algorítmicos.</p></div>
+          <div class="stage-example"><span>EN LA VIDA DE MATEO</span><p>Mateo trabajó toda su vida con tecnología. Vio cómo las plataformas y la automatización cambiaban los empleos, cómo las redes sociales entraban en su casa y cómo la IA transformaba su oficio. Su taller formó jóvenes para que no quedaran atrás.</p><span class="stage-result">Tecnología y sociedad se transforman mutuamente</span></div>
+        </article>
+      </div>
+      <p class="academic-note"><strong>Nota académica:</strong> los conceptos y autores corresponden al material del Bloque 2 «El ser humano y la sociedad» (semanas 7 a 11). Las situaciones de Mateo son ficticias y se usan como ejemplo.</p>
+    </section>
+
     <!-- REFLEXION / CIERRE -->
     <section class="reflection section-dark section-pad" id="reflexion">
-      <div class="section-kicker reveal"><span>05</span> / REFLEXIÓN FINAL</div>
+      <div class="section-kicker reveal"><span>07</span> / REFLEXIÓN FINAL</div>
       <div class="reflection-grid">
         <div class="reflection-copy reveal">
           <p class="overline">EPÍLOGO</p>
           <h2>No somos solamente<br><em>de dónde venimos.</em></h2>
-          <p>Mateo comprendió que la familia, la escuela, los amigos y la comunidad habían influido profundamente en su desarrollo. Algunas experiencias le dieron herramientas para crecer; otras lo llevaron a adoptar comportamientos que tuvo que cuestionar y cambiar.</p>
+          <p>Al mirar su vida completa, Mateo comprendió que la familia, la escuela, los amigos, el trabajo y la comunidad habían influido profundamente en su desarrollo. Algunas experiencias le dieron herramientas para crecer; otras lo llevaron a adoptar comportamientos que tuvo que cuestionar y cambiar.</p>
           <p>No podía modificar su infancia, pero sí aprender de ella. Tampoco podía borrar sus errores, pero podía asumirlos y construir nuevas formas de relacionarse con los demás.</p>
-          <p>Su historia no terminó cuando decidió cambiar. En realidad, fue entonces cuando comenzó a escribirla de manera consciente.</p>
+          <p>Como diría Aristóteles, no fue una «bestia» ni un «dios»: fue un ser social. Su historia no terminó cuando decidió cambiar. En realidad, fue entonces cuando comenzó a escribirla de manera consciente: la continuó en su trabajo, en su matrimonio, en los hijos que educó y en los nietos a quienes les contó lo aprendido.</p>
         </div>
-        <figure class="reflection-image image-frame reveal" data-image="imagenes/cierre.jpg" data-label="Imagen final que simboliza esperanza y futuro">
+        <figure class="reflection-image image-frame reveal" data-image="imagenes/cierre.jpg" data-label="Imagen final que simboliza el camino recorrido">
           <img src="imagenes/cierre.jpg" alt="Camino iluminado al amanecer, símbolo de nuevas oportunidades" loading="lazy">
           <div class="image-placeholder"><span>EPÍLOGO</span><strong>cierre.jpg</strong><small>Camino, horizonte o luz de amanecer.</small></div>
           <figcaption>TODO CAMBIO COMIENZA CON UN PASO</figcaption>
@@ -869,6 +1116,8 @@ body { font-size: 19px; line-height: 1.8; }
         <a href="#linea-de-vida">Línea de vida</a>
         <a href="#instituciones">Entorno social</a>
         <a href="#socializacion">Socialización</a>
+        <a href="#control-social">Control social</a>
+        <a href="#teorias">Teorías</a>
         <a href="#reflexion">Reflexión</a>
       </nav>
       <div class="credits-grid">
@@ -995,12 +1244,31 @@ body { font-size: 19px; line-height: 1.8; }
 
   // Aparición suave de secciones al entrar en pantalla; si no existe
   // IntersectionObserver, el contenido permanece visible.
+  // Escalona la aparición de las tarjetas que comparten una cuadrícula.
+  document.querySelectorAll('.institution-grid, .socialization-list').forEach(function (grid) {
+    Array.from(grid.children).forEach(function (child, index) {
+      child.style.transitionDelay = (index % 3) * 0.12 + 's';
+    });
+  });
+
+  // Paralaje suave de la portada (se desactiva con movimiento reducido).
+  const heroContent = document.querySelector('.hero-content');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroContent && !reduceMotion) {
+    window.addEventListener('scroll', function () {
+      const y = Math.min(window.scrollY, 700);
+      heroContent.style.translate = '0 ' + (y * 0.12) + 'px';
+    }, { passive: true });
+  }
+
   const revealElements = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(function (entries, observer) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          const target = entry.target;
+          if (target.style.transitionDelay) setTimeout(function () { target.style.transitionDelay = ''; }, 1400);
           observer.unobserve(entry.target);
         }
       });
@@ -1030,7 +1298,7 @@ body { font-size: 19px; line-height: 1.8; }
   });
 
   // Marca en la navegación la sección que ocupa la mayor parte de la pantalla.
-  const trackedSections = ['historia', 'linea-de-vida', 'instituciones', 'socializacion', 'reflexion']
+  const trackedSections = ['historia', 'linea-de-vida', 'instituciones', 'socializacion', 'control-social', 'teorias', 'reflexion']
     .map(function (id) { return document.getElementById(id); })
     .filter(Boolean);
 
@@ -1080,12 +1348,12 @@ body { font-size: 19px; line-height: 1.8; }
 
   document.querySelectorAll('.institution-card').forEach(function (card) {
     const copy = card.querySelector('.institution-card-copy');
-    if (copy) copy.appendChild(makeOpenButton('Ver esta influencia', 'institution'));
+    if (copy && card.querySelector('.card-story')) copy.appendChild(makeOpenButton('Leer un momento de su vida', 'institution'));
   });
 
-  document.querySelectorAll('.social-stage').forEach(function (stage) {
+  document.querySelectorAll('#socializacion .social-stage').forEach(function (stage) {
     const example = stage.querySelector('.stage-example');
-    if (example) example.appendChild(makeOpenButton('Ver ejemplo en la historia', 'socialization'));
+    if (example && stage.querySelector('.card-story')) example.appendChild(makeOpenButton('Leer un momento de su vida', 'socialization'));
   });
 
   function setDialogImage(image) {
@@ -1133,6 +1401,7 @@ body { font-size: 19px; line-height: 1.8; }
     appendDialogHeading(heading);
     appendClones(dialogContent, '.chapter-copy > p:not(.overline)', copy);
     appendClones(dialogContent, '.learning-note', copy);
+    appendClones(dialogContent, '.chapter-how', chapter);
     appendClones(dialogContent, '.chapter-institution', chapter);
     setDialogImage(image);
     updateChapterNavigation(index);
@@ -1149,14 +1418,17 @@ body { font-size: 19px; line-height: 1.8; }
 
     const heading = card.querySelector('h3');
     const image = card.querySelector('figure img');
-    dialogLabel.textContent = type === 'institution' ? 'MURAL RENACER · ENTORNO SOCIAL' : 'MURAL RENACER · SOCIALIZACIÓN';
+    const sectionLabel = card.closest('section') && card.closest('section').dataset.dialogLabel;
+    dialogLabel.textContent = type === 'institution' ? 'MURAL RENACER · UN MOMENTO DE SU VIDA' : 'MURAL RENACER · ' + (sectionLabel || 'UN MOMENTO DE SU VIDA');
     dialogContent.replaceChildren();
     appendDialogHeading(heading);
-    if (type === 'institution') {
-      appendClones(dialogContent, '.institution-card-copy > p, .tag-row', card);
-    } else {
-      appendClones(dialogContent, '.stage-main > p:not(.overline), .stage-example > p, .stage-result', card);
+    const storyBox = card.querySelector('.card-story');
+    if (storyBox) {
+      Array.from(storyBox.children).forEach(function (paragraph) {
+        dialogContent.appendChild(paragraph.cloneNode(true));
+      });
     }
+    appendClones(dialogContent, type === 'institution' ? '.tag-row' : '.stage-result', card);
     setDialogImage(image);
     dialogNav.hidden = true;
     activeChapterIndex = -1;
